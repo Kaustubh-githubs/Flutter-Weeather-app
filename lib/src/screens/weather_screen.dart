@@ -5,7 +5,7 @@ import 'package:flutter_weather/src/bloc/weather_bloc.dart';
 import 'package:flutter_weather/src/bloc/weather_event.dart';
 import 'package:flutter_weather/src/bloc/weather_state.dart';
 import 'package:flutter_weather/src/repository/weather_repository.dart';
-import 'package:flutter_weather/src/api/api_keys.dart';
+// import 'package:flutter_weather/src/api/weather_api_client.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/src/widgets/weather_widget.dart';
 import 'package:http/http.dart' as http;
@@ -18,7 +18,7 @@ enum OptionsMenu { changeCity, settings }
 class WeatherScreen extends StatefulWidget {
   final WeatherRepository weatherRepository = WeatherRepository(
       weatherApiClient: WeatherApiClient(
-          httpClient: http.Client(), apiKey: ApiKey.OPEN_WEATHER_MAP));
+          httpClient: http.Client(), apiKey: apiKey.OPEN_WEATHER_MAP));
   @override
   _WeatherScreenState createState() => _WeatherScreenState();
 }
@@ -92,6 +92,7 @@ class _WeatherScreenState extends State<WeatherScreen>
               opacity: _fadeAnimation,
               child: BlocBuilder(
                   bloc: _weatherBloc,
+                  // ignore: missing_return
                   builder: (_, WeatherState weatherState) {
                     if (weatherState is WeatherLoaded) {
                       this._cityName = weatherState.weather.cityName;

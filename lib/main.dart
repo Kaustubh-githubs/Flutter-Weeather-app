@@ -43,7 +43,7 @@ class AppStateContainer extends StatefulWidget {
   _AppStateContainerState createState() => _AppStateContainerState();
 
   static _AppStateContainerState of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(_InheritedStateContainer)
+    return (context.dependOnInheritedWidgetOfExactType()
             as _InheritedStateContainer)
         .data;
   }
@@ -53,7 +53,6 @@ class _AppStateContainerState extends State<AppStateContainer> {
   ThemeData _theme = Themes.getTheme(Themes.DARK_THEME_CODE);
   int themeCode = Themes.DARK_THEME_CODE;
   TemperatureUnit temperatureUnit = TemperatureUnit.celsius;
-
 
   @override
   initState() {
