@@ -1,7 +1,12 @@
 # Flutter Weather
 
 A Flutter application to view current weather status.
-This is my first project on my journey to learning and understanding flutter and dart.
+this application works on ios as well as android platform 
+
+# Developer
+Kaustubh Shrivastava
+Owner
+Code For Future.pvt.ltd
 
 ![android](./screenshots/android.png?raw=true 'android')
 ![ios](./screenshots/ios.gif?raw=true 'ios')
@@ -41,10 +46,9 @@ eg:
   }
   ```
 
-## todo
-- i18n support for multiple languages
+
 
 ## Acknowledgments
 
-* [Weather Icon Pack](https://erikflowers.github.io/weather-icons/)
+
 
